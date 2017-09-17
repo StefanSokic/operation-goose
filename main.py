@@ -1,7 +1,6 @@
 #!flask/bin/python
-from flask import Flask, jsonify, request, redirect, url_for
-from flask import request
-from flask import abort
+from flask import Flask, jsonify, request, redirect, url_for, flash, request, \
+    abort
 from werkzeug import secure_filename
 import os
 
@@ -27,10 +26,13 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            # INSERT THE CALL TO THE BASH SCRIPT, RUN THROUGH DARKFLOW AND 
+            filepath = os.path.join(current_app.root_path,
+                                    app.config['UPLOAD_FOLDER'],
+                                    filename)
+            file.save(filepath)
+            os.system("bash process_video.sh " + filepath)
             return "Photo uploaded"
-            #return redirect(url_for('uploaded_file',filename=filename))
+
     return '''
     <!doctype html>
     <title>Upload new File</title>
