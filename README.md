@@ -5,6 +5,7 @@ Using the yolo/tiny models built on darkflow (the tensorflow translation of dark
 
 # Setup
 First, install Anaconda3 from online.
+Make sure to install ffmpeg.
 Then
 
 ```
