@@ -80,7 +80,7 @@ for next_count in counts[1:]:  # for every other frame besides the very first
         if item not in current_count.keys():
             num = next_count[item]
             if num == 1:
-                print("    "+"A single " + item + " enters the frame")
+                print("    "+"A single " + item + " enters the frame.")
             else:
                 print("    "+str(num) + " " + item + "s enter the frame.")
                 # check for objects disappearing - compares keys in current dict
