@@ -25,12 +25,13 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
+            #filename = secure_filename(file.filename)
+            #filepath = os.path.join(current_app.root_                       app.config['UPLOAD_FOLDER']filename)
+            #file.save(filepath)
             filename = secure_filename(file.filename)
-            filepath = os.path.join(current_app.root_path,
-                                    app.config['UPLOAD_FOLDER'],
-                                    filename)
-            file.save(filepath)
-            os.system("bash process_video.sh " + filepath)
+            print(filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            os.system("bash process_video.sh " + '/uploads/' + filename)
             return "Photo uploaded"
 
     return '''
