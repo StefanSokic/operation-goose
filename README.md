@@ -1,5 +1,7 @@
-# operation-goose
-API detecting change and motion in surveillance footage. Built for Hack the North 2017.
+# Operation-Goose
+
+## Open Source API
+Using the yolo/tiny models built on darkflow (the tensorflow translation of darknet), we created operation-gooose, a computer vision API which logs objects, motion, and anomalies in natural language. Built for Hack the North 2017.
 
 # Setup
 First, install Anaconda3 from online.
@@ -31,4 +33,8 @@ wget --no-check-certificate https://pjreddie.com/media/files/tiny-yolo-voc.weigh
 
 
 cd ../..
-``
+```
+The script is run by going to the `operation-goose` directory and typing 
+```
+bash process_video.sh <video path> 
+```
