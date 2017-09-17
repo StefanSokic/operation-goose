@@ -1,0 +1,276 @@
+Demo
+layer     filters    size              input                output
+    0 conv     16  3 x 3 / 1   416 x 416 x   3   ->   416 x 416 x  16
+        1 max          2 x 2 / 2   416 x 416 x  16   ->   208 x 208 x  16
+            2 conv     32  3 x 3 / 1   208 x 208 x  16   ->   208 x 208 x  32
+                3 max          2 x 2 / 2   208 x 208 x  32   ->   104 x 104 x
+                32
+                    4 conv     64  3 x 3 / 1   104 x 104 x  32   ->   104 x 104
+                    x  64
+                        5 max          2 x 2 / 2   104 x 104 x  64   ->    52 x
+                        52 x  64
+                            6 conv    128  3 x 3 / 1    52 x  52 x  64   ->
+                            52 x  52 x 128
+                                7 max          2 x 2 / 2    52 x  52 x 128   ->
+                                26 x  26 x 128
+                                    8 conv    256  3 x 3 / 1    26 x  26 x 128
+                                    ->    26 x  26 x 256
+                                        9 max          2 x 2 / 2    26 x  26 x
+                                        256   ->    13 x  13 x 256
+                                           10 conv    512  3 x 3 / 1    13 x  13
+                                           x 256   ->    13 x  13 x 512
+                                              11 max          2 x 2 / 1    13 x
+                                              13 x 512   ->    13 x  13 x 512
+                                                 12 conv   1024  3 x 3 / 1    13
+                                                 x  13 x 512   ->    13 x  13
+                                                 x1024
+                                                    13 conv    512  3 x 3 / 1
+                                                    13 x  13 x1024   ->    13 x
+                                                    13 x 512
+                                                       14 conv    425  1 x 1 / 1
+                                                       13 x  13 x 512   ->    13
+                                                       x  13 x 425
+                                                          15 detection
+                                                          mask_scale: Using
+                                                          default '1.000000'
+                                                          Loading weights from
+                                                          tiny-yolo.weights...Done!
+                                                          video file:
+                                                          data/testvideo2.mp4
+
+                                                          FPS:18808.5
+                                                          Objects:
+
+                                                          FPS:1.0
+                                                          Objects:
+
+                                                          car: 28%
+                                                          car: 32%
+                                                          car: 24%
+                                                          car: 25%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 50%
+                                                          motorbike: 26%
+                                                          car: 30%
+                                                          car: 38%
+                                                          car: 61%
+                                                          car: 72%
+                                                          truck: 24%
+                                                          truck: 43%
+                                                          truck: 34%
+                                                          car: 36%
+                                                          car: 45%
+                                                          car: 54%
+                                                          car: 30%
+                                                          car: 24%
+                                                          car: 56%
+                                                          car: 37%
+                                                          car: 27%
+                                                          car: 25%
+
+                                                          FPS:0.7
+                                                          Objects:
+
+                                                          car: 45%
+                                                          car: 50%
+                                                          motorbike: 27%
+                                                          car: 30%
+                                                          car: 35%
+                                                          car: 59%
+                                                          car: 71%
+                                                          truck: 43%
+                                                          truck: 33%
+                                                          car: 36%
+                                                          car: 45%
+                                                          car: 54%
+                                                          car: 29%
+                                                          car: 26%
+                                                          car: 55%
+                                                          car: 35%
+                                                          car: 27%
+
+                                                          FPS:1.0
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 49%
+                                                          car: 31%
+                                                          car: 32%
+                                                          car: 58%
+                                                          car: 70%
+                                                          truck: 45%
+                                                          truck: 35%
+                                                          car: 37%
+                                                          car: 45%
+                                                          car: 54%
+                                                          car: 28%
+                                                          car: 26%
+                                                          car: 53%
+                                                          car: 34%
+                                                          car: 27%
+                                                          car: 24%
+                                                          car: 25%
+
+                                                          FPS:0.9
+                                                          Objects:
+
+                                                          car: 45%
+                                                          car: 49%
+                                                          motorbike: 24%
+                                                          car: 31%
+                                                          car: 32%
+                                                          car: 59%
+                                                          car: 70%
+                                                          truck: 44%
+                                                          truck: 34%
+                                                          car: 37%
+                                                          car: 46%
+                                                          car: 54%
+                                                          car: 29%
+                                                          car: 26%
+                                                          car: 54%
+                                                          car: 34%
+                                                          car: 27%
+                                                          car: 25%
+                                                          car: 26%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 49%
+                                                          car: 31%
+                                                          car: 32%
+                                                          car: 59%
+                                                          car: 70%
+                                                          truck: 25%
+                                                          truck: 44%
+                                                          truck: 35%
+                                                          car: 37%
+                                                          car: 47%
+                                                          car: 55%
+                                                          car: 30%
+                                                          car: 25%
+                                                          car: 55%
+                                                          car: 35%
+                                                          car: 27%
+                                                          car: 26%
+                                                          car: 27%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 43%
+                                                          car: 48%
+                                                          motorbike: 24%
+                                                          car: 31%
+                                                          car: 33%
+                                                          car: 60%
+                                                          car: 71%
+                                                          truck: 26%
+                                                          truck: 44%
+                                                          truck: 34%
+                                                          car: 37%
+                                                          car: 47%
+                                                          car: 54%
+                                                          car: 31%
+                                                          car: 25%
+                                                          car: 57%
+                                                          car: 35%
+                                                          car: 28%
+                                                          car: 26%
+                                                          car: 31%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 43%
+                                                          car: 47%
+                                                          car: 31%
+                                                          car: 31%
+                                                          car: 59%
+                                                          car: 72%
+                                                          truck: 26%
+                                                          truck: 45%
+                                                          truck: 34%
+                                                          car: 37%
+                                                          car: 48%
+                                                          car: 55%
+                                                          car: 31%
+                                                          car: 25%
+                                                          car: 57%
+                                                          car: 36%
+                                                          car: 28%
+                                                          car: 26%
+                                                          car: 30%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 46%
+                                                          car: 32%
+                                                          car: 31%
+                                                          car: 58%
+                                                          car: 71%
+                                                          truck: 27%
+                                                          truck: 45%
+                                                          truck: 34%
+                                                          car: 35%
+                                                          car: 46%
+                                                          car: 54%
+                                                          car: 29%
+                                                          car: 57%
+                                                          car: 36%
+                                                          car: 27%
+                                                          car: 27%
+                                                          car: 31%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 46%
+                                                          car: 30%
+                                                          car: 32%
+                                                          car: 59%
+                                                          car: 72%
+                                                          truck: 27%
+                                                          truck: 44%
+                                                          truck: 33%
+                                                          car: 35%
+                                                          car: 45%
+                                                          car: 53%
+                                                          car: 27%
+                                                          car: 56%
+                                                          car: 36%
+                                                          car: 27%
+                                                          car: 28%
+                                                          car: 29%
+
+                                                          FPS:1.1
+                                                          Objects:
+
+                                                          car: 44%
+                                                          car: 47%
+                                                          motorbike: 26%
+                                                          car: 29%
+                                                          car: 33%
+                                                          car: 60%
+                                                          car: 72%
+                                                          truck: 27%
+                                                          truck: 44%
+                                                          truck: 34%
+                                                          car: 34%
+                                                          car: 42%
+                                                          car: 50%
+                                                          car: 25%
+                                                          car: 54%
+                                                          car: 35%
+                                                          car: 28%
+                                                          car: 27%
+                                                          car: 28%
