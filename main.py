@@ -33,8 +33,15 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             os.system("bash process_video.sh " + '/uploads/' + filename)
             log = open('./output/log.txt', 'r')
-            return log.read()
+            log_r = log.read()
+            vid_log = ""
+            for i in log_r:
+                if i == "[":
+                    vid_log += "<br>["
+                else:
+                    vid_log += i
 
+            return vid_log
     return '''
     <!doctype html>
     <title>Upload new File</title>
