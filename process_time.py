@@ -8,5 +8,5 @@ def get_length(filename):
   minutes = info[0][15:17]
   seconds = info[0][18:23]
   total = (float(hours) * 3600) + (float(minutes) * 60) + float(seconds)
-  return
+  return total
 
