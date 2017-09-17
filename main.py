@@ -32,7 +32,8 @@ def upload_file():
             print(filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             os.system("bash process_video.sh " + '/uploads/' + filename)
-            return "Photo uploaded"
+            log = open('./output/log.txt', 'r')
+            return log.read()
 
     return '''
     <!doctype html>
