@@ -34,7 +34,11 @@ wget --no-check-certificate https://pjreddie.com/media/files/tiny-yolo-voc.weigh
 
 cd ../..
 ```
-The script is run by going to the `operation-goose` directory and typing 
+If you want to run the script alone, it is run by going to the `operation-goose` directory and typing 
 ```
 bash process_video.sh <video path> 
+```
+Otherwise, the application is run by
+```
+python main.py
 ```
