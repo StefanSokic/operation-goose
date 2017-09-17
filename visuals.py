@@ -7,6 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
+
 def graph(json):
 
     ITEMS_APPEARED = []
@@ -49,11 +50,9 @@ def graph(json):
     plt.ylabel('Item Frequency/Second')
     plt.xlabel('Video Length (s)')
     ax.legend(loc = 'right top',
-              prop = fontP, 
+              prop = fontP,
               fancybox = True)
     plt.tight_layout()
 
-    plt.savefig('Item frequency.png')
-    df.to_csv('video_log.csv')
-
-graph(json)
+    plt.savefig('output/item-frequency.png')
+    df.to_csv('output/video_log.csv')

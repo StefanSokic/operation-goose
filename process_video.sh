@@ -16,5 +16,4 @@ flow --imgdir ../$IMDIR \
 
 cd ..
 FRAMECOUNT=$(ls -1q $IMDIR/out/out* | wc -l)
-python generate_report.py $IMDIR $FRAMECOUNT $FRAMERATE \
-       | echo > log.txt
+python generate_report.py $IMDIR $FRAMECOUNT $FRAMERATE
