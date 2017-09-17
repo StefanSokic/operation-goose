@@ -25,14 +25,23 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
+            #filename = secure_filename(file.filename)
+            #filepath = os.path.join(current_app.root_                       app.config['UPLOAD_FOLDER']filename)
+            #file.save(filepath)
             filename = secure_filename(file.filename)
-            filepath = os.path.join(current_app.root_path,
-                                    app.config['UPLOAD_FOLDER'],
-                                    filename)
-            file.save(filepath)
-            os.system("bash process_video.sh " + filepath)
-            return "Photo uploaded"
+            print(filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            os.system("bash process_video.sh " + '/uploads/' + filename)
+            log = open('./output/log.txt', 'r')
+            log_r = log.read()
+            vid_log = ""
+            for i in log_r:
+                if i == "[":
+                    vid_log += "<br>["
+                else:
+                    vid_log += i
 
+            return vid_log
     return '''
     <!doctype html>
     <title>Upload new File</title>
