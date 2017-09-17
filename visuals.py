@@ -1,3 +1,8 @@
+"""
+return plot of item frequency in video
+json file as input
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
@@ -16,7 +21,7 @@ def graph(json):
     for i,j in enumerate(list):
         dict[i] = j
 
-    df = pd.DataFrame(columns=[i for i in ITEMS_APPEARED], index=[i for i in range(len(dict))])
+    df = pd.DataFrame(columns = [i for i in ITEMS_APPEARED], index = [i for i in range(len(dict))])
     df.index.name = 'Seconds'
 
     for item in ITEMS_APPEARED:
@@ -37,13 +42,15 @@ def graph(json):
     fontP.set_size('small')
     fig, ax = plt.subplots()
     for i in ITEMS_APPEARED:
-        ax.plot(df.index, df[i], label=i)
-    plt.title('{} Second Video Log: {} items found'.format(len(df.index),len(ITEMS_APPEARED)),
-              fontname='Ubuntu', fontstyle='italic')
-    plt.xlim((-2,len(df.index)+2))
+        ax.plot(df.index, df[i], label = i)
+    plt.title('{} Second Video Log: {} items found'.format(len(df.index), len(ITEMS_APPEARED)),
+              fontname = 'Ubuntu', fontstyle = 'italic')
+    plt.xlim((-2, len(df.index) + 2))
     plt.ylabel('Item Frequency/Second')
     plt.xlabel('Video Length (s)')
-    ax.legend(loc='right top', prop=fontP, fancybox=True)
+    ax.legend(loc = 'right top',
+              prop = fontP, 
+              fancybox = True)
     plt.tight_layout()
 
     plt.savefig('Item frequency.png')
